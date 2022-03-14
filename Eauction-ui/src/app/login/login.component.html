@@ -1,1 +1,35 @@
-<p>login works!</p>
+<div class="row">
+    <div class="col-sm-6 offset-sm-3">
+        <div class="card">
+            <h2 style="text-align: center;">Login</h2>
+            <div class="card-body">
+                <form [formGroup]="userLogin" (ngSubmit)="onSubmit()">
+
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" formControlName="username" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && formControls['username'].errors }" />
+                        <div *ngIf="submitted && formControls['username'].errors" class="invalid-feedback">
+                            <div *ngIf="formControls['username'].errors['required']">Username is mandatory</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" formControlName="password" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && formControls['password'].errors }" />
+                        <div *ngIf="submitted && formControls['password'].errors" class="invalid-feedback">
+                            <div *ngIf="formControls['password'].errors['required']">Password is mandatory</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <button [disabled]="loading" class="btn btn-primary">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                            Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
