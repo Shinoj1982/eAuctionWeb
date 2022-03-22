@@ -1,1 +1,51 @@
-<p>seller works!</p>
+<h2 class="mb-3 text-center">Fetch Details</h2>
+<div class="container">
+  <div class="form-group row">
+    <label for="productList" class="col-sm-2 col-form-label">Product</label>
+    <div class="col-sm-6">
+      <select id="productList" class="form-control" [(ngModel)]="selectedProduct" (ngModelChange)="onChange($event)">
+        <option *ngFor="let product of products" [ngValue]="product.id"> {{product.productName}} </option>
+      </select>
+    </div>
+    <div class="col-sm-3">
+      <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="onGetProduct(selectedProduct)">Get</button>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="shortDescription" class="col-sm-2 col-form-label">Short Description</label>
+    <div class="col-sm-10">
+      <input type="text" class="col-sm-6" readonly value="{{productDetails.shortDescription}}">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="detailedDescription" class="col-sm-2 col-form-label">Detailed Description</label>
+    <div class="col-sm-10">
+      <input type="text" class="col-sm-6" readonly value="{{productDetails.detailedDescription}}">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="bidEndDate" class="col-sm-2 col-form-label">Bid End Date</label>
+    <div class="col-sm-10">
+      <input type="text" class="col-sm-6" readonly value="{{productDetails.bidEndDate}}">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="startingPrice" class="col-sm-2 col-form-label">Starting Price</label>
+    <div class="col-sm-10">
+      <input type="text" class="col-sm-6" readonly value="{{productDetails.startingPrice}}">
+    </div>
+  </div>
+  <h2 class="mb-3 text-center">Bids</h2>
+  <div class="form-group row">
+    <div class="col-sm-2">Bid Amount</div>
+    <div class="col-sm-2">Name</div>
+    <div class="col-sm-2">Email</div>
+    <div class="col-sm-2">Phone</div>
+  </div>
+    <div class="form-group row" *ngFor="let bid of productDetails.bids" >
+      <div class="col-sm-2">{{bid.bidAmount}}</div>
+      <div class="col-sm-2">{{bid.firstName}}</div>
+      <div class="col-sm-2">{{bid.email}}</div>
+      <div class="col-sm-2">{{bid.phone}}</div>
+    </div>
+</div>
