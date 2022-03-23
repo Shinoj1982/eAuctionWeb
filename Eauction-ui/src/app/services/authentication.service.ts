@@ -20,13 +20,6 @@ export class AuthenticationService {
     }
 
     login(username: string, password: string) {
-        /*return this.http.post<any>(`${config.apiUrl}/users/authenticate`, { username, password })
-            .pipe(map(user => {
-                // store user details and jwt token in local storage to keep user logged in between page refreshes
-                localStorage.setItem('activeUser', JSON.stringify(user));
-                this.activeUserSubject.next(user);
-                return user;
-            })); */
         if(username === "seller")
         {
             let seller = new User();
@@ -34,6 +27,7 @@ export class AuthenticationService {
             seller.password = "seller";
             seller.firstName = "seller";
             seller.lastName = "seller";
+            localStorage.setItem("activeUser", seller.username);
             return of(seller);
         }
 
@@ -42,6 +36,8 @@ export class AuthenticationService {
         buyer.password = "seller";
         buyer.firstName = "seller";
         buyer.lastName = "seller";
+        localStorage.setItem("activeUser", buyer.username);
+
         return of(buyer);
     }
 

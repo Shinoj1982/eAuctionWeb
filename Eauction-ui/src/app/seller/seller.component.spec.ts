@@ -1,22 +1,13 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { SellerService } from '../services/seller.api.service';
 import { SellerComponent } from './seller.component';
 
 describe('SellerComponent', () => {
   let component: SellerComponent;
-  let fixture: ComponentFixture<SellerComponent>;
+  let sellerService: SellerService;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ SellerComponent ]
-    })
-    .compileComponents();
-  });
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SellerComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    sellerService = jasmine.createSpyObj(SellerService.name, ["getProducts", "getProduct"]);
+    component = new SellerComponent(sellerService);
   });
 
   it('should create', () => {
