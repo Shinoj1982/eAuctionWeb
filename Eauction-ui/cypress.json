@@ -1,0 +1,6 @@
+{
+    "$schema": "https://on.cypress.io/cypress.schema.json",
+    "screenshotsFolder": "dist/e2e/screenshots",
+    "videosFolder": "dist/e2e/videos",
+    "baseUrl": "http://localhost:4200"
+}
