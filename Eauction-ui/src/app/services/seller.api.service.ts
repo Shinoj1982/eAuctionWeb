@@ -7,7 +7,7 @@ import { ProductDetail } from '../models/productDetail';
 
 @Injectable({ providedIn: 'root' })
 export class SellerService {
-    private sellerUrl = 'http://localhost:8001/api/v1/Seller';  // URL to web api
+    private sellerUrl = 'https://sellerapi.azurewebsites.net/api/v1/seller';  // URL to web api
 
     httpOptions = {
       headers: new HttpHeaders(
