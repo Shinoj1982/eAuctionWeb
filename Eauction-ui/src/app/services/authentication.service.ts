@@ -27,16 +27,16 @@ export class AuthenticationService {
             seller.password = "seller";
             seller.firstName = "seller";
             seller.lastName = "seller";
-            localStorage.setItem("activeUser", seller.username);
+            localStorage.setItem("activeUser", JSON.stringify(seller));
             return of(seller);
         }
 
         let buyer = new User();
-        buyer.username = "seller";
-        buyer.password = "seller";
-        buyer.firstName = "seller";
-        buyer.lastName = "seller";
-        localStorage.setItem("activeUser", buyer.username);
+        buyer.username = "buyer";
+        buyer.password = "buyer";
+        buyer.firstName = "buyer";
+        buyer.lastName = "buyer";
+        localStorage.setItem("activeUser", JSON.stringify(buyer));
 
         return of(buyer);
     }
