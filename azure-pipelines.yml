@@ -17,7 +17,7 @@ steps:
   displayName: 'Install Node.js'
 
 - script: 
-  workingDirectory: $(Build.SourcesDirectory)/Eauction-ui
+  workingDirectory: $(System.DefaultWorkingDirectory)\e-auctionui\
     npm install -g @angular/cli
     npm install
     ng build --prod
