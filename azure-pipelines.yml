@@ -1,3 +1,4 @@
+
 # Node.js with Angular
 # Build a Node.js project that uses Angular.
 # Add steps that analyze code, save build artifacts, deploy, and more:
@@ -15,7 +16,8 @@ steps:
     versionSpec: '16.x'
   displayName: 'Install Node.js'
 
-- script: |
+- script: 
+  workingDirectory: $(Build.SourcesDirectory)/Eauction-ui
     npm install -g @angular/cli
     npm install
     ng build --prod
