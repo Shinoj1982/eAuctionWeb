@@ -38,16 +38,20 @@ module.exports = function (config) {
     },
     reporters: ['progress', 'kjhtml'],
     customLaunchers: {
-      Chrome_headless: {
+      ChromeHeadless: {
         base: "ChromeHeadless",
         flags: ['--no-sandbox']
+      },
+        ChromeHeadlessCI: {
+          base: 'ChromeHeadless',
+          flags: ['--no-sandbox']
       }
     },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['ChromeHeadless'],
+    browsers: ['Chrome', 'ChromeHeadless', 'ChromeHeadlessCI'],
     singleRun: false,
     restartOnFileChange: true
   });
