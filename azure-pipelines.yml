@@ -8,7 +8,7 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-latest
 
 steps:
 - task: NodeTool@0
@@ -24,7 +24,7 @@ steps:
   displayName: 'npm install and build'
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/eauction-ui/dist/eauction-ui/'
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist/eauction-ui/'
     includeRootFolder: true
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
