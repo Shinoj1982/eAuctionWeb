@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/e9a979ac-9efb-454e-9063-4b7c08c4c447/resourceGroups/fse256832/providers/Microsoft.Web/sites/eauction256832",
+    "appService.deploySubpath": "dist\\eauction-ui"
+}
