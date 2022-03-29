@@ -9,7 +9,7 @@ import { SellerService } from './seller.api.service';
   describe('SellerService', () => {
     let service: SellerService;
     let httpMock: HttpTestingController;
-    let url = 'http://localhost:8001/api/v1/Seller';
+    let url = 'https://sellerapi.azurewebsites.net/api/v1/seller';
       
     beforeEach(() => {
         TestBed.configureTestingModule({
